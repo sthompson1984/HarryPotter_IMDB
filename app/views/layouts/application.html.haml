@@ -1,0 +1,33 @@
+!!! 5
+%html
+  %head
+    %h1 Harry Potter IMDB
+    %h3 App created by:
+    %table#contact
+      %thead
+        %tr
+          %th Student
+          %th Contact Info
+      %tbody
+        %tr
+          %td Dale Thompson
+          %td sthompson18@murraystate.edu
+        %tr
+          %td Laura Winter
+          %td lwinter@murraystate.edu
+        %tr
+          %td Willis Holmes
+          %td wholmes2@murraystate.edu
+    <br><br>
+    %title Harry Potter IMDB
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    
+%body
+  %table#menu
+    %tr
+      %td= link_to 'All Movies', movies_path
+      %td= link_to 'All Characters', characters_path
+      %td= link_to 'All Actors', actors_path
+  = yield

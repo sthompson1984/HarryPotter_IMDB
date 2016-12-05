@@ -1,0 +1,21 @@
+%h1 Movies
+%h2 #{@Actor.name}
+%ul#details
+  %li
+    Age:
+    = @Actor.age
+%p
+%table#movies
+  %thead
+    %tr
+      %th Movie
+      %th Character
+      %th Release Date
+  %tbody
+    - @Characters.each do |character|
+      %tr
+        %td= character.movie.title
+        %td= character.name
+        %td= character.movie.release_date.strftime("%m/%d/%Y")
+%p
+= link_to 'Back to actors list', actors_path

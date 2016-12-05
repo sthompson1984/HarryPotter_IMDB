@@ -1,0 +1,14 @@
+%h1 Characters
+ 
+%table#characters
+  %thead
+    %tr
+      %th Movie
+      %th Character
+      %th Actor
+  %tbody
+    - @Characters.each do |character|
+      %tr
+        %td= character.movie.title
+        %td= character.name
+        %td= character.actor.name

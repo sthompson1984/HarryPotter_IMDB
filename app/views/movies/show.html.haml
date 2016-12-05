@@ -1,0 +1,22 @@
+%h1 Cast and Crew
+%h2 #{@Movie.title}
+%ul#details
+  %li
+    Description:
+    = @Movie.description
+  %li
+    Released on: 
+    = @Movie.release_date.strftime("%B %d, %Y")
+%p
+%table#movies
+  %thead
+    %tr
+      %th Character
+      %th Actor
+  %tbody
+    - @Characters.each do |character|
+      %tr
+        %td= character.name
+        %td= character.actor.name
+%p
+= link_to 'Back to movies list', movies_path
